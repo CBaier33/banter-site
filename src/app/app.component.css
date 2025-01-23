@@ -1,17 +1,19 @@
 :host {
-  --content-padding: 10px;
+  --content-padding: 50px;
 }
+
 header {
   display: block;
   height: 60px;
   padding: var(--content-padding);
-  box-shadow: 0px 5px 25px var(--shadow-color);
+  box-shadow: 0px 5px 15px var(--shadow-color);
 }
 
 img.brand-logo {
-  width: 60px;
+  width: 70px;
   height: auto;  /* Keeps the aspect ratio intact */
-  padding-left: 0.5pc;
+  padding-left: 2px;
+  padding-right: 10px;
 }
 
 .content {
