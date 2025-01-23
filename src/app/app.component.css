@@ -1,5 +1,5 @@
 :host {
-  --content-padding: 50px;
+  --content-padding: 0px;
 }
 
 header {
@@ -19,6 +19,3 @@ img.brand-logo {
 .content {
   padding: var(--content-padding);
 }
-
-
-
