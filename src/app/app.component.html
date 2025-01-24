@@ -10,16 +10,16 @@
       </a>
 
         <div class="hidden md:flex space-x-4">
-          <a href="/" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">home</a>
-          <a href="/learn" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">learn</a>
-          <a href="/playground" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">playground</a>
-          <a href="/about" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">about</a>
+          <a [routerLink]="['/']" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">home</a>
+          <a [routerLink]="['learn']" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">learn</a>
+          <a [routerLink]="['playground']" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">playground</a>
+          <a [routerLink]="['about']" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">about</a>
         </div>
       </div>
 
     </nav>
   <section class="content">
-    <app-home></app-home>
+    <router-outlet></router-outlet>
   </section>
 </main>
 
