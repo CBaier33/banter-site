@@ -2,16 +2,18 @@
     <nav class="bg-black p-4 shadow-3xl">
       <div class="flex items-center justify-between">
 
+      <a [routerLink]="['/']">
         <div class="flex items-center justify-between">
           <img src="assets/images/logo.svg" alt="logo" class="brand-logo">
           <span class="text-white text-4xl font-semibold">banter-lang.org</span>
         </div>
+      </a>
 
         <div class="hidden md:flex space-x-4">
-          <a href="#" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">home</a>
-          <a href="#" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">learn</a>
-          <a href="#" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">playground</a>
-          <a href="#" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">about</a>
+          <a href="/" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">home</a>
+          <a href="/learn" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">learn</a>
+          <a href="/playground" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">playground</a>
+          <a href="/about" class="text-white text-2xl hover:text-gray-300 transition-colors duration-200">about</a>
         </div>
       </div>
 
