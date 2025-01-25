@@ -1,0 +1,10 @@
+.codeblock{
+  background-color: black;
+  border-radius: 8px;
+  font-style: normal;
+  padding-left: 2vh;
+  margin-top: 2%;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  overflow-x: auto;
+}

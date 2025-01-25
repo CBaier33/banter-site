@@ -1,1 +1,55 @@
-<p>learn works!</p>
+<section class="bg-black flex flex-col overflow-hidden items-center">
+  <h1 class="text-white text-6xl font-semibold">Just a bit of banter...</h1>
+    <div class="grid gap-8 p-8 text-lg w-full max-w-7xl">
+      <div class="flex flex-col space-y-7">
+        <div class="bg-[#808080] italic p-8 rounded-lg text-white shadow-lg">
+              <h2 class="text-3xl font-semibold">Fundamental Syntax</h2>
+        <p class="text-xl">If you're already familar with programming, you might find Banter mildly infuriating. There are no loops, no functions, and only primitive data types. The whole language can be broken down into five basic rules. While this may be limiting for building enterprise software, it is actually quite liberating for the mind of a student.</p>
+        </div>
+    </div>
+  </div>
+    <div class="grid grid-cols-2 gap-8 p-8 w-full max-w-7xl text-xl">
+      <!-- Column 1 -->
+      <div class="flex flex-col space-y-7">
+        <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
+              <h2 class="text-2xl font-semibold">The Let Statement</h2>
+              <p>allows you to assign the output of an expression to a particular mneumonic representation.</p>
+              <div [innerHTML]="letSnippet" class="codeblock"></div>
+        </div>
+        <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
+              <h2 class="text-xl font-semibold">The If Statement</h2>
+              <p>allows you to conditionally execute a line of code. The body of the statement will only execute if the expression evaluates to True</p>
+        <!-- app.component.html -->
+              <div [innerHTML]="ifSnippet" class="codeblock"></div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="flex flex-col space-y-6">
+        <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
+              <h2 class="text-xl font-semibold">The If-Else Statement</h2>
+        <p>simply provides alternative execution case for when the condition evaluates False.</p>
+              <div [innerHTML]="ifElseSnippet" class="codeblock"></div>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="flex flex-col col-span-2 space-y-6">
+        <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
+              <h2 class="text-xl font-semibold">Return Statements</h2>
+              <p>Return statements are used to simply return the value of a statement or expression and terminate the evalutation. These statements cannot be null, you must return something.
+</p>
+              <div [innerHTML]="returnSnippet" class="codeblock"></div>
+        </div>
+        <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
+              <h2 class="text-xl font-semibold">Goto Statements</h2>
+        <p>Goto Statements allow for repetition of instructions demarcated by Marker Statements.</p>
+        <!-- app.component.html -->
+              <div [innerHTML]="gotoSnippet" class="codeblock"></div>
+        </div>
+      </div>
+  </div>
+
+
+</section>
+

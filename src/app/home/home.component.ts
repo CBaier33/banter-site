@@ -9,6 +9,7 @@ import * as THREE from 'three';
 })
 export class HomeComponent implements AfterViewInit{
 
+  // three.js cube render animation.
   ngAfterViewInit(): void {
 
     // Get the canvas element
@@ -29,9 +30,25 @@ export class HomeComponent implements AfterViewInit{
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setAnimationLoop(animate);
 
+    // Create lights
+    const light = new THREE.PointLight(0xffffff, 10, 100);
+    light.position.set(0,0,-2); // Position the light
+    scene.add(light);
+
+    // Optionally add ambient light for softer shading
+    const ambientLight = new THREE.AmbientLight(0x404040); // Soft white light
+    scene.add(ambientLight);
+
     // Create a cube geometry and material
+
+    const material1 = new THREE.MeshPhongMaterial({
+      color: 0xD3D3D3, // Base color for the cube
+      shininess: 30,   // Controls the shininess of the surface
+      specular: 0xAAAAAA, // Highlight color
+    });
+
+    // Mesh
     const geometry1 = new THREE.BoxGeometry(4,4,4);
-    const material1 = new THREE.MeshBasicMaterial({ color: 0x808080 });
     const cube1 = new THREE.Mesh(geometry1, material1);
 
     // Add the cube to the scene
@@ -40,8 +57,7 @@ export class HomeComponent implements AfterViewInit{
 
     // Create a cube geometry and material
     const geometry2 = new THREE.BoxGeometry(4,4,4);
-    const material2 = new THREE.MeshBasicMaterial({ color: 0x808080 });
-    const cube2 = new THREE.Mesh(geometry2, material2);
+    const cube2 = new THREE.Mesh(geometry2, material1);
 
     // Add the cube to the scene
     cube2.position.set(4,-7,-10)
@@ -49,20 +65,26 @@ export class HomeComponent implements AfterViewInit{
 
     // Create a cube geometry and material
     const geometry3 = new THREE.BoxGeometry(3,3,3);
-    const material3 = new THREE.MeshBasicMaterial({ color: 0x808080 });
-    const cube3 = new THREE.Mesh(geometry3, material3);
+    const cube3 = new THREE.Mesh(geometry3, material1);
 
     // Add the cube to the scene
     cube3.position.set(-9,2,-5)
     scene.add(cube3);
 
-    const geometry4 = new THREE.BoxGeometry(2,2,2);
-    const material4 = new THREE.MeshBasicMaterial({ color: 0x808080 });
-    const cube4 = new THREE.Mesh(geometry4, material4);
+    // Geometry
+    const geometry4 = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+    const cube4 = new THREE.Mesh(geometry4, material1);
 
     // Add the cube to the scene
-    cube4.position.set(-6,-3,-6)
+    cube4.position.set(-3,4,-6)
     scene.add(cube4);
+
+    const geometry5 = new THREE.BoxGeometry(2,2,2);
+    const cube5 = new THREE.Mesh(geometry5, material1);
+
+    // Add the cube to the scene
+    cube5.position.set(-6,-3,-6)
+    scene.add(cube5);
 
     // Animation loop
     function animate(): void {
@@ -78,6 +100,9 @@ export class HomeComponent implements AfterViewInit{
       cube4.rotation.y -= 0.003;
       cube4.rotation.y -= 0.003;
       cube4.rotation.z -= 0.003;
+      cube5.rotation.y -= 0.003;
+      cube5.rotation.y -= 0.003;
+      cube5.rotation.z -= 0.003;
       renderer.render(scene, camera);
     }
 
