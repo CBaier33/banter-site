@@ -1,0 +1,12 @@
+:host {
+  display: flex-box;
+  width: 100%;
+  height: 700px;  /* Adjust height as needed */
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+}
+
+

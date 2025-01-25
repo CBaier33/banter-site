@@ -1,1 +1,31 @@
-<p>playground works!</p>
+<section class="bg-black flex flex-col justify-center overflow-hidden items-center">
+  <div class="flex w-full h-[85vh] pt-16 pb-16 flex-col space-y-10 justify-center items-center ">
+  <!-- Editor Container (centered, with rounded corners) -->
+  <div class="w-full h-full max-w-5xl p-4 bg-gray-100 rounded-xl shadow-xl space-y-8">
+    <!-- Ace Editor Section -->
+    <div class="h-80">
+        <app-ace-editor></app-ace-editor>
+    </div>
+
+    <!-- Output Section -->
+    <div class="bg-white p-4 rounded-md shadow-md">
+      <h3 class="font-semibold text-xl">Output</h3>
+      <pre id="output" class="text-sm text-gray-800 whitespace-pre-wrap border border-gray-300 p-2 rounded-md h-32 overflow-auto">
+        <!-- Output content will be shown here -->
+      </pre>
+    </div>
+
+    <!-- Button Section -->
+    <div class="flex space-x-4 mt-4">
+      <button
+        class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition">
+        Run
+      </button>
+      <button
+          class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition">
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
+</section>

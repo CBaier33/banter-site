@@ -1,0 +1,40 @@
+import { Component, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import * as ace from 'ace-builds';
+
+// Configure ace to use the correct worker paths
+ace.config.set('basePath', '/assets/ace-builds/');
+ace.config.set('workerPath', '/assets/ace-builds/');
+
+@Component({
+  selector: 'app-ace-editor',
+  templateUrl: './ace-editor.component.html',
+  styleUrls: ['./ace-editor.component.css']
+})
+export class AceEditorComponent implements OnInit, AfterViewInit {
+  editor: ace.Editor | undefined;
+  editorValue: string = '';
+
+  constructor(private elementRef: ElementRef) {}
+
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    const editorContainer = this.elementRef.nativeElement.querySelector('#editor');
+    this.editor = ace.edit(editorContainer);
+    this.editor.setTheme('ace/theme/clouds');
+    this.editor.session.setMode('ace/mode/javascript');
+    this.editor.setFontSize(22); // Set the font size dynamically
+    this.editor.setValue(this.editorValue, -1);
+
+    this.editor.on('change', () => {
+      this.editorValue = this.editor!.getValue();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.editor) {
+      this.editor.destroy();
+    }
+  }
+}
+
