@@ -21,7 +21,14 @@
               "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [ "src/assets" ],
+            "assets": [
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ace-builds/src-min/mode",
+                "output": "/assets/ace-builds"
+              }
+            ],
             "styles": [
               "src/styles.css",
               "src/styles/tailwind.css",

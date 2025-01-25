@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, AfterViewInit } from '@angular/core';
 import * as ace from 'ace-builds';
+//import 'ace-builds/src-noconflict/theme-twilight';
 
 // Configure ace to use the correct worker paths
 ace.config.set('basePath', '/assets/ace-builds/');
@@ -21,7 +22,7 @@ export class AceEditorComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const editorContainer = this.elementRef.nativeElement.querySelector('#editor');
     this.editor = ace.edit(editorContainer);
-    this.editor.setTheme('ace/theme/clouds');
+    //this.editor.setTheme('ace/theme/ambiance');
     this.editor.session.setMode('ace/mode/javascript');
     this.editor.setFontSize(22); // Set the font size dynamically
     this.editor.setValue(this.editorValue, -1);

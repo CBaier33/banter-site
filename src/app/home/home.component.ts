@@ -36,13 +36,13 @@ export class HomeComponent implements AfterViewInit{
     scene.add(light);
 
     // Optionally add ambient light for softer shading
-    const ambientLight = new THREE.AmbientLight(0x404040); // Soft white light
+    const ambientLight = new THREE.AmbientLight(0x606060); // Soft white light
     scene.add(ambientLight);
 
     // Create a cube geometry and material
 
     const material1 = new THREE.MeshPhongMaterial({
-      color: 0xD3D3D3, // Base color for the cube
+      color: 0xE0E0E0, // Base color for the cube
       shininess: 30,   // Controls the shininess of the surface
       specular: 0xAAAAAA, // Highlight color
     });
