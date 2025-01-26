@@ -62,4 +62,13 @@ if x < n, then
    goto instruction 1
     </code></pre>
   `;
+  syntaxSnippet: string = `
+<pre><code>
+# This is a comment line
+
+"Strings must be double quotes."
+
+print "this will print to the screen"
+</code></pre>
+`;
 }

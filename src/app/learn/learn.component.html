@@ -28,22 +28,26 @@
       <div class="flex flex-col space-y-6">
         <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
               <h2 class="text-xl font-semibold">The If-Else Statement</h2>
-        <p>simply provides alternative execution case for when the condition evaluates False.</p>
+        <p>simply provides alternative execution case for when the condition evaluates to False.</p>
               <div [innerHTML]="ifElseSnippet" class="codeblock"></div>
+        </div>
+        <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
+              <h2 class="text-xl font-semibold">Additional Syntax</h2>
+              <div [innerHTML]="syntaxSnippet" class="codeblock"></div>
         </div>
       </div>
 
       <!-- Column 3 -->
       <div class="flex flex-col col-span-2 space-y-6">
         <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
-              <h2 class="text-xl font-semibold">Return Statements</h2>
-              <p>Return statements are used to simply return the value of a statement or expression and terminate the evalutation. These statements cannot be null, you must return something.
+              <h2 class="text-xl font-semibold">The Return Statement</h2>
+              <p>is used to simply return the value of a statement or expression and terminate the evalutation. These statements cannot be null, you must return something.
 </p>
               <div [innerHTML]="returnSnippet" class="codeblock"></div>
         </div>
         <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
-              <h2 class="text-xl font-semibold">Goto Statements</h2>
-        <p>Goto Statements allow for repetition of instructions demarcated by Marker Statements.</p>
+              <h2 class="text-xl font-semibold">The Goto and Marker Statements</h2>
+        <p>allow for repetition of instructions by returning back to demarcated lines of code.</p>
         <!-- app.component.html -->
               <div [innerHTML]="gotoSnippet" class="codeblock"></div>
         </div>

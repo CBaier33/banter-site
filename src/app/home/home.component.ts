@@ -97,9 +97,9 @@ export class HomeComponent implements AfterViewInit{
       cube3.rotation.y += 0.003;
       cube3.rotation.y += 0.003;
       cube3.rotation.z += 0.003;
-      cube4.rotation.y -= 0.003;
-      cube4.rotation.y -= 0.003;
-      cube4.rotation.z -= 0.003;
+      cube4.rotation.y += 0.003;
+      cube4.rotation.y += 0.003;
+      cube4.rotation.z += 0.003;
       cube5.rotation.y -= 0.003;
       cube5.rotation.y -= 0.003;
       cube5.rotation.z -= 0.003;
