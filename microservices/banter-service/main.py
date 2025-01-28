@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import subprocess
 import os
-from execute import execute
+import sys
 
 app = FastAPI()
 
@@ -32,12 +32,21 @@ def install_dependencies():
         pip_executable = os.path.join(VENV_DIR, "bin", "pip") if os.name != "nt" else os.path.join(VENV_DIR, "Scripts", "pip.exe")
         subprocess.run([pip_executable, "install", "-r", REQUIREMENTS_FILE], check=True)
 
+def load_executor():
+    sys.path.insert(0, CLONE_DIR)
+    try:
+        from execute import execute  
+        return execute
+    except ImportError as e:
+        raise ImportError(f"Failed to import execute function: {e}")
+
 @app.on_event("startup")
 async def startup_event():
     try:
         update_repo()
         setup_virtual_environment()
         install_dependencies()
+        load_executor()
         print("Repository updated successfully.")
     except Exception as e:
         print(f"Failed to update repository: {e}")
@@ -55,6 +64,7 @@ class CodeInput(BaseModel):
 async def run_code(input: CodeInput):
     try:
         # Run the interpreter as a subprocess, passing the code via stdin
+        from execute import execute
         result = execute(input.code)
 
         if result is None:
