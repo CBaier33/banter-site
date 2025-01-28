@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MarkdownModule } from 'ngx-markdown';
 
 @Component({
   selector: 'app-learn',
-  imports:[CommonModule, MarkdownModule],
+  imports:[CommonModule],
   templateUrl: './learn.component.html',
   styleUrls: ['./learn.component.css'],
 })
