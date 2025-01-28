@@ -13,6 +13,7 @@ yarn-error.log
 
 # Venv
 **/venv
+**/banter-lang
 
 # IDEs and editors
 .idea/
