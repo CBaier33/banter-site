@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AceEditorComponent } from '../ace-editor/ace-editor.component';
 import { BanterProcessorService } from '../services/banter-processor.service'
 
@@ -10,15 +10,22 @@ import { BanterProcessorService } from '../services/banter-processor.service'
 })
 export class PlaygroundComponent {
 
-  inputText: string = '';
+  @ViewChild(AceEditorComponent) aceEditorComponent!: AceEditorComponent; // Get the editor instance
   output: string | null = null;
 
   constructor(private banterProcessorService: BanterProcessorService) {}
 
   processBanter(): void {
-    this.banterProcessorService.processText(this.inputText).subscribe({
+    if (!this.aceEditorComponent) {
+      console.error('AceEditorComponent is not initialized');
+      return;
+    }
+
+    const editorText = this.aceEditorComponent.getEditorContent(); // Get text from Ace Editor
+    this.banterProcessorService.processText(editorText).subscribe({
       next: (response) => {
         this.output = response.output;
+        console.log(this.output);
       },
       error: (error) => {
         console.error('Error processing text:', error);
@@ -26,4 +33,10 @@ export class PlaygroundComponent {
     });
   }
 
+  resetEditor(): void {
+    if (this.aceEditorComponent) {
+      this.aceEditorComponent.setEditorContent("");
+      this.output = "";
+    }
+  }
 }

@@ -24,12 +24,28 @@ export class AceEditorComponent implements OnInit, AfterViewInit {
     this.editor = ace.edit(editorContainer);
     //this.editor.setTheme('ace/theme/ambiance');
     this.editor.session.setMode('ace/mode/javascript');
-    this.editor.setFontSize(22); // Set the font size dynamically
+    this.editor.setOptions({
+      fontSize: "22px",
+    })
     this.editor.setValue(this.editorValue, -1);
 
     this.editor.on('change', () => {
       this.editorValue = this.editor!.getValue();
     });
+    setTimeout(() => {
+      if (this.editor)
+        this.editor.resize(); // Recalculate layout
+    }, 100); // Give it a slight delay
+  }
+
+  getEditorContent(): string {
+    return this.editorValue;
+  }
+
+  setEditorContent(output: string): void {
+    if (this.editor){
+      this.editor.setValue(output);
+    }
   }
 
   ngOnDestroy(): void {
