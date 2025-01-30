@@ -8,13 +8,13 @@
     </div>
 
     <!-- Output Section -->
-    <div class="bg-gray-100 p-4 rounded-md shadow-md">
-      <h3 class="font-semibold text-xl">Output</h3>
-      <pre id="output" class="text-sm text-gray-800 whitespace-pre-wrap border border-gray-300 p-2 rounded-md h-32 overflow-auto">
-        <!-- Output content will be shown here -->
-          {{ output }}
+    <div class="bg-gray-900 p-4 rounded-md shadow-md">
+      <h3 class="font-semibold text-lg text-white mb-2">Output</h3>
+      <pre id="output" class="text-sm font-mono text-green-300 bg-gray-800 whitespace-pre-wrap border border-gray-700 p-3 rounded-md h-40 overflow-auto">
+        {{ output }}
       </pre>
     </div>
+
 
     <!-- Button Section -->
     <div class="flex space-x-4 mt-4">
@@ -24,7 +24,8 @@
         Run
       </button>
       <button
-          class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition">
+          class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition"
+        (click)="resetEditor()">
         Reset
       </button>
     </div>

@@ -25,7 +25,7 @@ export class AceEditorComponent implements OnInit, AfterViewInit {
     //this.editor.setTheme('ace/theme/ambiance');
     this.editor.session.setMode('ace/mode/javascript');
     this.editor.setOptions({
-      fontSize: "22px",
+      fontSize: "18px",
     })
     this.editor.setValue(this.editorValue, -1);
 

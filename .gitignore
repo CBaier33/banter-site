@@ -13,7 +13,7 @@ yarn-error.log
 
 # Venv
 **/venv
-**/__pycache__
+**/__pycache__/
 **/banter-lang
 
 # IDEs and editors

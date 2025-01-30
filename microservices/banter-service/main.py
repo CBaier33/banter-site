@@ -16,10 +16,10 @@ app.add_middleware(
 )
 
 # Configuration
-REPO_URL = "https://github.com/cbaier33/banter-lang"  # Replace with your repo URL
-CLONE_DIR = "./banter-lang"  # Directory to clone the repo
-VENV_DIR = "./venv"  # Directory for the virtual environment
-REQUIREMENTS_FILE = "./requirements.txt"  # Path to requirements.txt in the current directory
+REPO_URL = "https://github.com/cbaier33/banter-lang"
+CLONE_DIR = "./banter-lang"
+VENV_DIR = "./venv"
+REQUIREMENTS_FILE = "./requirements.txt"
 
 # Ensure the latest version of the repo is available
 def update_repo():
@@ -28,7 +28,6 @@ def update_repo():
     else:
         subprocess.run(["git", "-C", CLONE_DIR, "pull"], check=True)
 
-# Create and activate a virtual environment
 def setup_virtual_environment():
     if not os.path.exists(VENV_DIR):
         print("Creating virtual environment...")
@@ -84,4 +83,3 @@ async def run_code(input: CodeInput):
 
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-

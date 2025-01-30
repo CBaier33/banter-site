@@ -3,14 +3,8 @@
 
 body {
   font-family: 'Times New Roman';
-  background-color: var(--primary-color);
+  background-color: black;
   margin: 0;
-}
-:root {
-  --primary-color: #000000;
-  --secondary-color: #f0f4f8;
-  --accent-color: #4D5A7A;
-  --shadow-color: #E8E8E8;
 }
 
 button.primary {
