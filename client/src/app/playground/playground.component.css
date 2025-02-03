@@ -4,3 +4,13 @@
   height: 100%;
   font-family: "Courier New", "Consolas", "Menlo", "Monaco", monospace !important;
 }
+.dark-output {
+  background-color: #282a36  !important;
+  color: white !important;
+  border-color: #444 !important;
+}
+
+.dark-output pre {
+  color: white !important;
+}
+

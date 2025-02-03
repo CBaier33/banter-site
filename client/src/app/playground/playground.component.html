@@ -12,34 +12,48 @@
     <!-- Output Section -->
     <div class="bg-grey-600 rounded-md shadow-md">
       <h3 class="font-semibold text-lg text-white">Output</h3>
+        <div id="output-block"
+             class="bg-white border border-gray-200 p-3 rounded-md h-40 flex justify-center items-center">
 
-      <div class="bg-white border border-gray-200 p-3 rounded-md h-40 flex justify-center items-center">
+          <div *ngIf="loading" class="w-10 h-10 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
 
-        <div *ngIf="loading" class="w-10 h-10 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
-
-        <pre *ngIf="!loading"
-             id="output"
-             class="text-sm font-mono text-black w-full h-full overflow-auto"
-             [innerText]="output?.trim()">
-        </pre>
-      </div>
+          <pre *ngIf="!loading"
+               id="output"
+               class="text-sm font-mono text-black w-full h-full overflow-auto"
+               [innerText]="output?.trim()">
+          </pre>
+        </div>
     </div>
 
 
 
     <!-- Button Section -->
-    <div class="flex space-x-4 mt-2">
-      <button
-        class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition"
-        (click)="processBanter()">
-        Run
-      </button>
-      <button
-          class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition"
-        (click)="resetEditor()">
-        Reset
-      </button>
-    </div>
+      <div class="flex justify-between mt-2">
+  <!-- Left Buttons -->
+  <div class="flex space-x-4">
+    <button
+      class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition"
+      (click)="processBanter()">
+      Run
+    </button>
+    <button
+      class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition"
+      (click)="resetEditor()">
+      Reset
+    </button>
+  </div>
+
+  <!-- Right-Aligned Theme Button -->
+    <button
+  class="p-2 bg-black rounded-md flex items-center justify-center hover:bg-gray-600 transition"
+  (click)="toggleTheme()">
+  <i class="material-icons text-white">sync</i>
+</button>
+
+
+
+</div>
+
   </div>
 </div>
 </section>

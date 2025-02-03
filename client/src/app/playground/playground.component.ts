@@ -44,4 +44,20 @@ export class PlaygroundComponent {
       this.output = "";
     }
   }
-}
+
+  toggleTheme(): void {
+    if (this.aceEditorComponent) {
+      this.aceEditorComponent.darkMode = !this.aceEditorComponent.darkMode;
+      this.aceEditorComponent.updateTheme();
+      }
+
+    const outputBlock = document.getElementById('output-block');
+    if (outputBlock) {
+      if (this.aceEditorComponent.darkMode) {
+        outputBlock.classList.add('dark-output');
+        } else {
+        outputBlock.classList.remove('dark-output');
+        }
+      }
+    }
+  }

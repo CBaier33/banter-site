@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, AfterViewInit, OnDestroy, Input } from '@angular/core';
 import * as ace from 'ace-builds';
-//import 'ace-builds/src-noconflict/theme-twilight';
+import 'ace-builds/src-noconflict/theme-dracula';
 
 // Configure ace to use the correct worker paths
 ace.config.set('basePath', '/assets/ace-builds/');
@@ -17,6 +17,8 @@ export class AceEditorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() editorValue: string = ''; // Default content
   @Input() readonly: boolean = false; // Default to readonly
+  @Input() darkMode: boolean = false; // Default to readonly
+
 
   constructor(private elementRef: ElementRef) {}
 
@@ -25,7 +27,7 @@ export class AceEditorComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     const editorContainer = this.elementRef.nativeElement.querySelector('#editor');
     this.editor = ace.edit(editorContainer);
-    //this.editor.setTheme('ace/theme/ambiance');
+    this.editor.setTheme('ace/theme/ambiance');
     this.editor.session.setMode('ace/mode/banter');
     this.editor.setOptions({
       fontSize: "16px",
@@ -53,6 +55,13 @@ export class AceEditorComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.editor){
       this.editor.setValue(output);
       this.editor.clearSelection();
+    }
+  }
+
+  updateTheme(): void {
+    if (this.editor){
+      const theme = this.darkMode ? 'ace/theme/dracula' : 'ace/theme/textmate';
+      this.editor.setTheme(theme);
     }
   }
 
