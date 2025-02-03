@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, OnInit, AfterViewInit, OnDestroy, Input } from '@angular/core';
 import * as ace from 'ace-builds';
 //import 'ace-builds/src-noconflict/theme-twilight';
 
@@ -11,9 +11,12 @@ ace.config.set('workerPath', '/assets/ace-builds/');
   templateUrl: './ace-editor.component.html',
   styleUrls: ['./ace-editor.component.css']
 })
-export class AceEditorComponent implements OnInit, AfterViewInit {
+export class AceEditorComponent implements OnInit, AfterViewInit, OnDestroy {
   editor: ace.Editor | undefined;
-  editorValue: string = '';
+  //editorValue: string = '';
+
+  @Input() editorValue: string = ''; // Default content
+  @Input() readonly: boolean = false; // Default to readonly
 
   constructor(private elementRef: ElementRef) {}
 
@@ -26,6 +29,10 @@ export class AceEditorComponent implements OnInit, AfterViewInit {
     this.editor.session.setMode('ace/mode/banter');
     this.editor.setOptions({
       fontSize: "16px",
+      readOnly: this.readonly,
+      highlightActiveLine: true,
+      highlightSelectedWord: true,
+
     })
     this.editor.setValue(this.editorValue, -1);
 
@@ -45,6 +52,7 @@ export class AceEditorComponent implements OnInit, AfterViewInit {
   setEditorContent(output: string): void {
     if (this.editor){
       this.editor.setValue(output);
+      this.editor.clearSelection();
     }
   }
 

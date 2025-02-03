@@ -1,15 +1,8 @@
-:host {
-  display: flex-box;
-  width: 100%;
-  height: 700px;  /* Adjust height as needed */
-}
-
 #editor {
+  display: flex;
   width: 100%;
   height: 100%;
+  flex-grow: 1;
   font-family: "Courier New", "Consolas", "Menlo", "Monaco", monospace !important;
 }
 
-.ace-container {
-  all: unset;
-}
