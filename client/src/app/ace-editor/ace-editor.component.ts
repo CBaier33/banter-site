@@ -23,9 +23,9 @@ export class AceEditorComponent implements OnInit, AfterViewInit {
     const editorContainer = this.elementRef.nativeElement.querySelector('#editor');
     this.editor = ace.edit(editorContainer);
     //this.editor.setTheme('ace/theme/ambiance');
-    this.editor.session.setMode('ace/mode/javascript');
+    this.editor.session.setMode('ace/mode/banter');
     this.editor.setOptions({
-      fontSize: "18px",
+      fontSize: "16px",
     })
     this.editor.setValue(this.editorValue, -1);
 

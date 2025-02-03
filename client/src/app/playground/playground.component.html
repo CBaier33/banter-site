@@ -1,6 +1,8 @@
 <section class="bg-black flex flex-col justify-center overflow-hidden items-center">
   <div class="flex w-full h-[85vh] pt-16 pb-16 flex-col space-y-10 justify-center items-center ">
+
   <!-- Editor Container (centered, with rounded corners) -->
+  <h1 class="text-white text-6xl font-semibold">Banter Playground</h1>
   <div class="w-full h-full max-w-5xl p-4 bg-[#808080] rounded-xl shadow-xl space-y-8">
     <!-- Ace Editor Section -->
     <div class="h-80">
@@ -8,16 +10,25 @@
     </div>
 
     <!-- Output Section -->
-    <div class="bg-gray-900 p-4 rounded-md shadow-md">
-      <h3 class="font-semibold text-lg text-white mb-2">Output</h3>
-      <pre id="output" class="text-sm font-mono text-green-300 bg-gray-800 whitespace-pre-wrap border border-gray-700 p-3 rounded-md h-40 overflow-auto">
-        {{ output }}
-      </pre>
+    <div class="bg-grey-600 rounded-md shadow-md">
+      <h3 class="font-semibold text-lg text-white">Output</h3>
+
+      <div class="bg-white border border-gray-200 p-3 rounded-md h-40 flex justify-center items-center">
+
+        <div *ngIf="loading" class="w-10 h-10 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
+
+        <pre *ngIf="!loading"
+             id="output"
+             class="text-sm font-mono text-black w-full h-full overflow-auto"
+             [innerText]="output?.trim()">
+        </pre>
+      </div>
     </div>
 
 
+
     <!-- Button Section -->
-    <div class="flex space-x-4 mt-4">
+    <div class="flex space-x-4 mt-2">
       <button
         class="px-4 py-2 bg-black text-lg text-white rounded-md hover:bg-gray-600 transition"
         (click)="processBanter()">

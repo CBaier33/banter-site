@@ -1188,4 +1188,4 @@ exports.Mode = Mode;
                         }
                     });
                 })();
-            
+

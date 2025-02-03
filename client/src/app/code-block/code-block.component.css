@@ -1,4 +1,4 @@
-.codeblock{
+.container{
   background-color: black;
   border-radius: 8px;
   font-style: normal;
@@ -8,6 +8,3 @@
   overflow-x: auto;
 }
 
-.highlight {
-  color: red;
-}

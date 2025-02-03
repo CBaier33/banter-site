@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CodeBlockComponent } from '../code-block/code-block.component';
+import { HighlightTextPipe } from '../highlight-text.pipe';
+
 
 @Component({
   selector: 'app-learn',
-  imports:[CommonModule],
+  imports:[CommonModule, CodeBlockComponent, HighlightTextPipe],
   templateUrl: './learn.component.html',
   styleUrls: ['./learn.component.css'],
 })
 export class LearnComponent {
+  keyWords: string[] = ['let', 'be', 'if', 'then', ',', '@'];
+
     letSnippet: string = `
     <pre><code>
 let x be 5
@@ -68,6 +73,7 @@ if x < n, then
 "Strings must be double quotes."
 
 print "this will print to the screen"
+
 </code></pre>
 `;
 }

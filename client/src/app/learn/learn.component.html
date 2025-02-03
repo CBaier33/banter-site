@@ -11,10 +11,17 @@
     <div class="grid grid-cols-2 gap-8 p-8 w-full max-w-7xl text-xl">
       <!-- Column 1 -->
       <div class="flex flex-col space-y-7">
-        <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
+        <div class="bg-[#808080] italic p-6 text-white rounded-lg shadow-lg">
               <h2 class="text-2xl font-semibold">The Let Statement</h2>
               <p>allows you to assign the output of an expression to a particular mneumonic representation.</p>
-              <div [innerHTML]="letSnippet" class="codeblock"></div>
+              <div class="codeblock">
+
+                  <p [innerHTML]="letSnippet | highlightText: keyWords"></p>
+
+
+              </div>
+
+
         </div>
         <div class="bg-[#808080] italic p-6 rounded-lg text-white shadow-lg">
               <h2 class="text-xl font-semibold">The If Statement</h2>
