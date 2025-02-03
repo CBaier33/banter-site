@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, AfterViewInit, OnDestroy, Input } from '@angular/core';
 import * as ace from 'ace-builds';
-import 'ace-builds/src-noconflict/theme-dracula';
+import 'ace-builds/src-noconflict/theme-tomorrow_night_eighties';
 
 // Configure ace to use the correct worker paths
 ace.config.set('basePath', '/assets/ace-builds/');
@@ -60,7 +60,7 @@ export class AceEditorComponent implements OnInit, AfterViewInit, OnDestroy {
 
   updateTheme(): void {
     if (this.editor){
-      const theme = this.darkMode ? 'ace/theme/dracula' : 'ace/theme/textmate';
+      const theme = this.darkMode ? 'ace/theme/tomorrow_night_eighties' : 'ace/theme/textmate';
       this.editor.setTheme(theme);
     }
   }

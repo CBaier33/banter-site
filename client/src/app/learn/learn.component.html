@@ -16,7 +16,7 @@
         <h2 class="text-2xl font-semibold">The Let Statement</h2>
         <p>allows you to assign the output of an expression to a particular mnemonic representation.</p>
         <div class="codeblock">
-          <pre><code><span style="color: #00FFFF">let</span> <span style="color: white">x</span> <span style="color: #00FFFF">be</span> 5</code></pre>
+          <pre><code><span class="keyword">let</span> x <span class="keyword">be</span> <span class="int">5</span></code></pre>
         </div>
       </div>
 
@@ -24,8 +24,8 @@
         <h2 class="text-xl font-semibold">The If Statement</h2>
         <p>allows you to conditionally execute a line of code. The body of the statement will only execute if the expression evaluates to True</p>
         <div class="codeblock">
-          <pre><code><span style="color: #00FFFF">if</span> <span style="color: white">x</span> &lt; 10, <span style="color: #00FFFF">then</span>
-  <span style="color: #00FFFF">let</span> <span style="color: white">y</span> <span style="color: #00FFFF">be</span> 10</code></pre>
+          <pre><code><span class="keyword">if</span> x &lt; <span class="int">10</span>, <span class="keyword">then</span>
+  <span class="keyword">let</span> y <span class="keyword">be</span> <span class="int">10</span></code></pre>
         </div>
       </div>
     </div>
@@ -36,10 +36,10 @@
         <h2 class="text-xl font-semibold">The If-Else Statement</h2>
         <p>simply provides alternative execution case for when the condition evaluates to False.</p>
         <div class="codeblock">
-          <pre><code><span style="color: #00FFFF">if</span> <span style="color: white">x</span> * <span style="color: white">y</span> == (100/2) - 1, <span style="color: #00FFFF">then</span>
-  <span style="color: #00FFFF">let</span> <span style="color: white">x</span> <span style="color: #00FFFF">be</span> <span style="color: blue">False</span>
-<span style="color: #00FFFF">else</span>
-  <span style="color: #00FFFF">let</span> <span style="color: white">x</span> <span style="color: #00FFFF">be</span> <span style="color: blue">True</span></code></pre>
+          <pre><code><span class="keyword">if</span> x * y == (<span class="int">100</span>/<span class="int">2</span>) - <span class="int">1</span>, <span class="keyword">then</span>
+  <span class="keyword">let</span> x <span class="keyword">be</span> <span class="bool">False</span>
+<span class="keyword">else</span>
+  <span class="keyword">let</span> x <span class="keyword">be</span> <span class="bool">True</span></code></pre>
         </div>
       </div>
 
@@ -48,9 +48,9 @@
         <div class="codeblock">
           <pre><code><span style="color: #808080"># This is a comment line</span>
 
-<span style="color: #00FF00">"Strings must be double quotes."</span>
+<span class="string">"Strings must be double quotes."</span>
 
-<span style="color: #00FFFF">print</span> <span style="color: #00FF00">"this will print to the screen"</span></code></pre>
+<span class="keyword">print</span> <span class="string">"this will print to the screen"</span></code></pre>
         </div>
       </div>
     </div>
@@ -61,15 +61,15 @@
         <h2 class="text-xl font-semibold">The Return Statement</h2>
         <p>is used to simply return the value of a statement or expression and terminate the evaluation. These statements cannot be null, you must return something.</p>
         <div class="codeblock">
-          <pre><code><span style="color: #00FFFF">let</span> <span style="color: white">wrong</span> <span style="color: #00FFFF">be</span> 3
-<span style="color: #00FFFF">let</span> <span style="color: white">right</span> <span style="color: #00FFFF">be</span> 7
+          <pre><code><span class="keyword">let</span> wrong <span class="keyword">be</span> <span class="int">3</span>
+<span class="keyword">let</span> right <span class="keyword">be</span> <span class="int">7</span>
 
-<span style="color: #00FFFF">if</span> <span style="color: white">wrong</span> + <span style="color: white">wrong</span> == <span style="color: white">right</span>, <span style="color: #00FFFF">then</span>
-  <span style="color: #00FFFF">return</span> <span style="color: blue">True</span>
-<span style="color: #00FFFF">else</span>
-  <span style="color: #00FFFF">return</span> <span style="color: blue">False</span>
+<span class="keyword">if</span> wrong + wrong == right, <span class="keyword">then</span>
+  <span class="keyword">return</span> <span class="bool">True</span>
+<span class="keyword">else</span>
+  <span class="keyword">return</span> <span class="bool">False</span>
 
-<span style="color: #00FFFF">return</span> <span style="color: #00FF00">"this will never execute"</span></code></pre>
+<span class="keyword">return</span> <span class="string">"this will never execute"</span></code></pre>
         </div>
       </div>
 
@@ -77,26 +77,26 @@
         <h2 class="text-xl font-semibold">The Goto and Marker Statements</h2>
         <p>allow for repetition of instructions by returning back to demarcated lines of code.</p>
         <div class="codeblock">
-          <pre><code><span style="color: #00FFFF">let</span> <span style="color: white">x</span> <span style="color: #00FFFF">be</span> 0
-<span style="color: #00FFFF">let</span> <span style="color: white">n</span> <span style="color: #00FFFF">be</span> 100
+          <pre><code><span class="keyword">let</span> x <span class="keyword">be</span> <span class="int">0</span>
+<span class="keyword">let</span> n <span class="keyword">be</span> <span class="int">100</span>
 
-<span style="color: #00FFFF">let</span> <span style="color: white">a</span> <span style="color: #00FFFF">be</span> 0
-<span style="color: #00FFFF">let</span> <span style="color: white">b</span> <span style="color: #00FFFF">be</span> 1
+<span class="keyword">let</span> a <span class="keyword">be</span> <span class="int">0</span>
+<span class="keyword">let</span> b <span class="keyword">be</span> <span class="int">1</span>
 
-<span style="color: #00FFFF">&#64;1</span> <span style="color: #808080"># Print Fibonacci Numbers</span>
-<span style="color: #00FFFF">if</span> <span style="color: white">x</span> &lt; <span style="color: white">n</span>, <span style="color: #00FFFF">then</span>
-  <span style="color: #00FFFF">print</span> <span style="color: white">a</span>
+<span class="keyword">&#64;<span class="int">1</span></span> <span style="color: #808080"># Print Fibonacci Numbers</span>
+<span class="keyword">if</span> x &lt; n, <span class="keyword">then</span>
+  <span class="keyword">print</span> a
 
-  <span style="color: #00FFFF">let</span> <span style="color: white">temp</span> <span style="color: #00FFFF">be</span> <span style="color: white">a</span> + <span style="color: white">b</span>
-  <span style="color: #00FFFF">let</span> <span style="color: white">a</span> <span style="color: #00FFFF">be</span> <span style="color: white">b</span>
-  <span style="color: #00FFFF">let</span> <span style="color: white">b</span> <span style="color: #00FFFF">be</span> <span style="color: white">temp</span>
+  <span class="keyword">let</span> temp <span class="keyword">be</span> a + b
+  <span class="keyword">let</span> a <span class="keyword">be</span> b
+  <span class="keyword">let</span> b <span class="keyword">be</span> temp
 
 
-  <span style="color: #00FFFF">let</span> x <span style="color: #00FFFF">be</span> x + 1
+  <span class="keyword">let</span> x <span class="keyword">be</span> x + <span class="int">1</span>
 
-  <span style="color: #00FFFF">goto instruction</span> 1
+  <span class="keyword">goto instruction</span> <span class="int">1</span>
 
-<span style="color: #00FFFF">return</span> <span style="color: #00FF00">"This is a valid result"</span></code></pre>
+<span class="keyword">return</span> <span class="string">"This is a valid result"</span></code></pre>
         </div>
       </div>
     </div>
