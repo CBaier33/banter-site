@@ -1,0 +1,28 @@
+services:
+  client:
+    build:
+      context: ./client
+    ports:
+      - "4200:4200"
+    depends_on:
+      - banter-service
+    networks:
+      - banter-site_app-network
+    environment:
+      - API_URL=http://banter-service:8000
+
+  banter-service:
+    build:
+      context: ./microservices/banter-service
+    ports:
+      - "8000:8000"
+    environment:
+      - FASTAPI_ENV=production
+    restart: always
+    networks:
+      - banter-site_app-network
+
+networks:
+  banter-site_app-network:
+    driver: bridge
+

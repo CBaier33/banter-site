@@ -17,5 +17,6 @@ img.brand-logo {
 }
 
 .content {
-  padding: var(--content-padding);
+  /*padding: var(--content-padding);*/
+  background-color: black;
 }

@@ -1,0 +1,5 @@
+:4200 {
+    root * /dist/banter-site/browser
+    file_server
+}
+

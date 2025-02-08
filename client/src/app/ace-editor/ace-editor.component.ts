@@ -27,7 +27,6 @@ export class AceEditorComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     const editorContainer = this.elementRef.nativeElement.querySelector('#editor');
     this.editor = ace.edit(editorContainer);
-    this.editor.setTheme('ace/theme/ambiance');
     this.editor.session.setMode('ace/mode/banter');
     this.editor.setOptions({
       fontSize: "16px",

@@ -1,19 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from contextlib import asynccontextmanager
+
 import subprocess
 import os
 import sys
-
-app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:4200", "https://banter-lang.org", "https://www.banter-lang.org"],
-    allow_credentials=True,
-    allow_methods=["GET", "POST"],
-    allow_headers=["Content-Type", "Authorization"],
-)
 
 # Configuration
 REPO_URL = "https://github.com/cbaier33/banter-lang"
@@ -48,25 +40,34 @@ def load_executor():
     except ImportError as e:
         raise ImportError(f"Failed to import execute function: {e}")
 
-@app.on_event("startup")
-async def startup_event():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     try:
         update_repo()
         setup_virtual_environment()
         install_dependencies()
         load_executor()
         print("Repository updated successfully.")
-    except Exception as e:
-        print(f"Failed to update repository: {e}")
-        raise e
+        yield  # Server runs while this is active
+    finally:
+        print("Shutting down server...")
 
-@app.on_event("shutdown")
-async def shutdown_event():
-    print("Shutting down server...")
+
+app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    #allow_origins=["http://localhost:4200", "https://banter-lang.org", "https://www.banter-lang.org"],
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Define a Pydantic model for the input
 class CodeInput(BaseModel):
     code: str
+
 
 @app.post("/run")
 async def run_code(input: CodeInput):

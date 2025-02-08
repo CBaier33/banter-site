@@ -1,26 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Pipe, PipeTransform } from '@angular/core';
-
-@Pipe({ name: 'highlightText' })
-export class HighlightTextPipe implements PipeTransform {
-  transform(value: string, keyWords: string[]): string {
-    if (!value) return '';
-
-    // Split the value by whitespace to check for keywords
-    return value.split(' ').map(word => {
-      // Check if the word is in the list of keywords and highlight it
-      if (keyWords.includes(word.trim())) {
-        return `<span style="color: #00A9FF">${word}</span>`;
-      }
-      return word;
-    }).join(' ');
-  }
-}
 
 @Component({
   selector: 'app-learn',
-  imports: [CommonModule, HighlightTextPipe],
+  imports: [CommonModule],
   templateUrl: './learn.component.html',
   styleUrls: ['./learn.component.css'],
 })
