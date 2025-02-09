@@ -1,8 +1,8 @@
 # Build stage
-FROM node:22 AS build
+FROM node:22
 WORKDIR /app
 ADD . /app
-RUN npm install --legacy-peer-deps
+RUN npm install
 COPY . .
 RUN npm run build --prod
 
@@ -10,6 +10,6 @@ RUN npm run build --prod
 FROM caddy:2
 COPY --from=build /app/dist/banter-site/browser /usr/share/caddy
 
-# Use the file-server command directly in CMD
-CMD ["caddy", "file-server", "--root", "/usr/share/caddy", "--listen", ":4200"]
+COPY ./Caddyfile /etc/caddy/Caddyfile
 
+EXPOSE 4200
