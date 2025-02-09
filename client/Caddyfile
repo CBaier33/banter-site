@@ -1,6 +1,12 @@
-:4200 {
+banter-lang.org {
+    tls baier.tech@outlook.com
+    encode gzip
+
     root * /usr/share/caddy
     file_server
     try_files {path} /index.html
+
+    # Reverse proxy API requests
+    reverse_proxy /run http://banter-service:8000
 }
 

@@ -13,4 +13,5 @@ COPY --from=build /app/dist/banter-site/browser /usr/share/caddy
 
 COPY ./Caddyfile /etc/caddy/Caddyfile
 
-EXPOSE 4200
+EXPOSE 80
+EXPOSE 443

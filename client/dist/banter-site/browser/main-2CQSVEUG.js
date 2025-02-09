@@ -46784,7 +46784,7 @@ var BanterProcessorService = class _BanterProcessorService {
   constructor(http) {
     this.http = http;
   }
-  apiUrl = "http://localhost:8000/run";
+  apiUrl = "https://banter-lang.org/run";
   processText(inputText) {
     const headers = new HttpHeaders({
       "Content-Type": "application/json"

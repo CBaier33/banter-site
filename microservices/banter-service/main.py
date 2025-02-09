@@ -57,8 +57,7 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    #allow_origins=["http://localhost:4200", "https://banter-lang.org", "https://www.banter-lang.org"],
-    allow_origins=["*"],
+    allow_origins=["https://banter-lang.org", "https://www.banter-lang.org"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

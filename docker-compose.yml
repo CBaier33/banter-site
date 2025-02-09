@@ -3,13 +3,14 @@ services:
     build:
       context: ./client
     ports:
-      - "4200:4200"
+      - "80:80"
+      - "443:443"
     depends_on:
       - banter-service
     networks:
       - banter-site_app-network
     environment:
-      - API_URL=http://banter-service:8000
+      - API_URL=http://banter-lang.org
 
   banter-service:
     build:

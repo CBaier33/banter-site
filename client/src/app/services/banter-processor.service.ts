@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class BanterProcessorService {
-  private apiUrl = 'http://localhost:8000/run';
+  private apiUrl = 'https://banter-lang.org/run';
 
   constructor(private http: HttpClient) {}
 
