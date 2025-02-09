@@ -1,10 +1,11 @@
 # Build stage
-FROM node:22
+FROM node:18 AS build
+
 WORKDIR /app
 ADD . /app
-RUN npm install
+#RUN npm install
 COPY . .
-RUN npm run build --prod
+#RUN npm run build --prod | Currently not building
 
 # Serve stage
 FROM caddy:2

@@ -2,16 +2,7 @@
 @import "tailwindcss";
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", "Times", serif, "Arial";
   background-color: black;
   margin: 0;
 }
-
-button.primary {
-  padding: 10px;
-  border: solid 1px var(--primary-color);
-  background: var(--primary-color);
-  color: white;
-  border-radius: 8px;
-}
-

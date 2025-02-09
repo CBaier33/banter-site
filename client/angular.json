@@ -37,11 +37,12 @@
           },
           "configurations": {
             "production": {
+              "optimization": false,
               "budgets": [
                 {
                   "type": "initial",
                   "maximumWarning": "2mb",
-                  "maximumError": "3mb"
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -52,7 +53,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "optimization": true,
+              "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
             }

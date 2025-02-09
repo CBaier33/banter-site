@@ -1,7 +1,3 @@
-:host {
-  background-color: black !important;
-  height: 100vh;
-}
 
 header {
   display: block;
@@ -12,7 +8,7 @@ header {
 
 img.brand-logo {
   width: 70px;
-  height: auto;  /* Keeps the aspect ratio intact */
+  height: auto;
   padding-left: 2px;
   padding-right: 10px;
 }
