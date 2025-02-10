@@ -46784,7 +46784,7 @@ var BanterProcessorService = class _BanterProcessorService {
   constructor(http) {
     this.http = http;
   }
-  apiUrl = "https://banter-lang.org/run";
+  apiUrl = "https://api.banter-lang.org/run";
   processText(inputText) {
     const headers = new HttpHeaders({
       "Content-Type": "application/json"
@@ -46903,7 +46903,7 @@ var PlaygroundComponent = class _PlaygroundComponent {
         return ctx.toggleTheme();
       });
       \u0275\u0275elementStart(19, "i", 13);
-      \u0275\u0275text(20, "sync");
+      \u0275\u0275text(20, "light_mode");
       \u0275\u0275elementEnd()()()()();
     }
     if (rf & 2) {
