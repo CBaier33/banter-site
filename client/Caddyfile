@@ -1,3 +1,9 @@
+{
+    logging {
+        output file /var/log/caddy/access.log
+    }
+}
+
 banter-lang.org {
     tls baier.tech@outlook.com
     encode gzip
