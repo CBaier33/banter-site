@@ -12,6 +12,7 @@ context = []
 def execute(input_str: str) -> str:
 
     try:
+        input_str = input_str.replace("\r\n", "\n").replace("\r", "\n").strip()
         ast = concrete2abstract(input_str, parser)
         if ast is None:
             return "Invalid Input."
