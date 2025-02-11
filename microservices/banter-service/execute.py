@@ -6,10 +6,11 @@ from banterlang import parser
 from interpreter import eval_program
 from banter import concrete2abstract
 
-variables = {}
-context = []
 
 def execute(input_str: str) -> str:
+
+    variables = {}
+    context = []
 
     try:
         input_str = input_str.replace("\r\n", "\n").replace("\r", "\n").strip()
