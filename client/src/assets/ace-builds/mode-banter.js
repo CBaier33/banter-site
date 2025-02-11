@@ -9,7 +9,11 @@ ace.define("ace/mode/banter_highlight_rules",["require","exports","module","ace/
             "start": [
                 {
                     token: "keyword",
-                    regex: "\\b(?:(?:let|be|if|then|goto|instruction|print|return))\\b|@"
+                    regex: "\\b(else)\\b"
+                },
+                {
+                    token: "keyword",
+                    regex: "\\b(?:(?:let|be|if|else|then|goto|instruction|print|return))\\b|@"
                 },
                 {
                     token: "support.type",

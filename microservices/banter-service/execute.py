@@ -6,12 +6,13 @@ from banterlang import parser
 from interpreter import eval_program
 from banter import concrete2abstract
 
-variables = {}
-context = []
 
 def execute(input_str: str) -> str:
 
     try:
+        variables = {}
+        context = []
+
         input_str = input_str.replace("\r\n", "\n").replace("\r", "\n").strip()
         ast = concrete2abstract(input_str, parser)
         if ast is None:
