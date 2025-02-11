@@ -1,9 +1,3 @@
-{
-    logging {
-        output file /var/log/caddy/access.log
-    }
-}
-
 banter-lang.org {
     tls baier.tech@outlook.com
     encode gzip
@@ -11,6 +5,10 @@ banter-lang.org {
     root * /usr/share/caddy
     file_server
     try_files {path} /index.html
+
+    log {
+       output file /var/log/caddy/access.log
+    }
 }
 
 api.banter-lang.org {
@@ -21,6 +19,10 @@ api.banter-lang.org {
         header_down Access-Control-Allow-Origin *
         header_down Access-Control-Allow-Methods *
         header_down Access-Control-Allow-Headers *
+    }
+
+    log {
+       output file /var/log/caddy/access-api.log
     }
 }
 
