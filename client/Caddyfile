@@ -8,6 +8,13 @@ banter-lang.org {
 }
 
 api.banter-lang.org {
-    reverse_proxy localhost:8000
+    tls baier.tech@outlook.com
+    reverse_proxy http://banter-service:8000
+
+    header {
+        header_down Access-Control-Allow-Origin *
+        header_down Access-Control-Allow-Methods *
+        header_down Access-Control-Allow-Headers *
+    }
 }
 
